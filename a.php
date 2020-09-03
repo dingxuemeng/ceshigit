@@ -88,6 +88,10 @@ class JwClassController extends IndexController
      *  $condition 排课表查询条件
      *  $where 班级表查询条件
      */
+    public function aa(){
+        
+    }
+
     public function index()
     {
         // 选择框查询
