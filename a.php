@@ -38,6 +38,9 @@ class JwClassController extends IndexController
         $this->jwCourseStage = D('JwCourseStage');
         $this->jwClassTermGapperiod = D('JwClassTermGapperiod');
     }
+    public  function aa(){
+
+    }
 
     /**
      * 通用选项下拉列表数据
