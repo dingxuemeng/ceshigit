@@ -1,4 +1,5 @@
 
+<<<<<<< HEAD
 <?php
 /**
  * 微早教SCRM JwClassRule.class.php文件
@@ -100,6 +101,23 @@ class JwClassRuleController extends IndexController
         // 没有筛选时默认取出签约共享学员 包含该课程
         // 如果首次进来筛选出课程月龄对应学龄的默认学员
 
+=======
+ public function about_class()
+    {
+        $classid = I('request.classid', 0, 'intval');
+        $class = $this->jwClass->getRuleinfoByClassid($classid);
+        $ptdate = $this->jwClassRule->where([
+            'classid' => $class['id'],
+            'status' => 1,
+            'org_id' => $this->org_id
+        ])->getField('ptdate', true);
+        if (empty($classid) || empty($class)) {
+            $this->response->show(400, '没有此数据或班级已停用');
+        }
+        // 没有筛选时默认取出签约共享学员 包含该课程
+        // 如果首次进来筛选出课程月龄对应学龄的默认学员
+
+>>>>>>> ce3
         // 学员姓名 学员昵称 家长手机 所属顾问 学员学龄
         // 根据上述条件查出学员ID
         // 根据学员ID查出当前的合同信息
@@ -446,6 +464,7 @@ class JwClassRuleController extends IndexController
         ];
         $this->response->show(200, 'success', $data);
     }
+<<<<<<< HEAD
 
     /**
      * 某个学员退课列表
@@ -1704,3 +1723,5 @@ class JwClassRuleController extends IndexController
         exit;
     }
 }
+=======
+>>>>>>> ce3
